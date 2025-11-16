@@ -4,6 +4,7 @@ import morgan from "morgan";
 // import { PrismaClient } from "@prisma/client";
 import "dotenv/config";
 import authRoutes from "./routes/auth.routes";
+import taskRoutes from "./routes/task.routes";
 
 // export const prisma = new PrismaClient();
 
@@ -17,6 +18,7 @@ app.get("/", async (req, res) => {
   res.send("API working!");
 });
 app.use("/auth", authRoutes);
+app.use("/tasks", taskRoutes);
 
 
 export default app;
